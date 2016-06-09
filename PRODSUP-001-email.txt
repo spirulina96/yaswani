@@ -1,0 +1,29 @@
+Case 1 : PRODSUP-001
+
+Hi Harry, 
+
+Thanks for contacting CircleCi support today. 
+
+As I understand: You added a java project from github ( https://github.com/mtedone/podam) to Circleci and after successful or  green build  the Test Results tab is empty. 
+
+In order to replicate the issue at my end, I did a fork of code built it using CircleCI . I found out that code is missing a circle.yml in its root directory, also it’s a maven build which needs a maven surefire plugin to generate test report
+
+Here is a link : https://circleci.com/docs/test-metadata/#java-junit-results-with-maven-surefire-plugin
+
+Please create a circle.yml file in the root directory of the project with following content and re-run:
+
+test:
+  override:
+    - mvn clean install
+  post:
+    - mkdir -p $CIRCLE_TEST_REPORTS/junit/
+    - find . -type f -regex ".*/target/failsafe-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
+
+
+Please feel free to revert if issue persist or for any other queries regarding this.
+
+Thanks Again
+Regards
+Yaswani
+
+

@@ -1,0 +1,25 @@
+Case 3: PRODSUP-003
+
+Hi Adam, 
+
+Thanks for contacting CircleCi Support today. 
+My name is Yaswani and am happy to help you today with the product features and query about .Net 
+ 
+CircleCI is the Continuous Integration tools generally used at software development shops across the IT industry, to build packages, integration of test suites and deployment. It’s a complete CI&CD tool which can perform end to end automation of software packages from code commit to deployment to production following the SDLC 
+
+CicrleCi is pretty simple to apply and just work as plug and play with most of the standard projects. In case, if your project need some special setup then there are many possible ways and integrations to suit different type of needs.
+
+One can configure it to watch Git repo and build on latest commits which includes test and on success it will get deployed on to designated server or environment.
+ 
+At the moment CircleCi support 2 mobile platforms, 8 web languages, continuous work is going on to add support for other languages and .Net is one of the them which will be available soon.
+
+I recommend you to visit the following site for its features and know how as
+support and documentation is readily available here : https://circleci.com/docs. 
+
+Please feel free to revert for any more queries about the product/ suggestions/ any technical issues.
+
+Regards
+Yaswani 
+
+
+

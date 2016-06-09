@@ -1,0 +1,46 @@
+Case 2 : PRODSUP-002
+
+Hi Jolene,
+
+Thanks for contacting CircleCi support team today.
+
+As I understand that you are facing an issue with the project in CirceCi and is not getting a build complete status.
+
+In order to understand the issue, I need to replicate the same at my end. hence did a fork of code as its publically available.
+
+I did a build and got stuck there for 15-20 min but build wasn't successful It was executing slowly with following message on the dashboard
+
+		-----------------------------------------------------
+		 T E S T S
+		-----------------------------------------------------
+		Running org.apache.commons.csv.CSVFormatTest
+		.................................................
+
+Hence, I did check the CSVFormat.java file and found out that following file around line 795 has a for loop printing dots for (20*60*60)/ 72000 times and has sleep call as well, this is where the whole process execution seems to be stuck. 
+
+		commons-csv/src/main/java/org/apache/commons/csv/CSVFormat.java  : 795
+		----------------------------------------------------------------
+		/**
+		* Verifies the consistency of the parameters and throws an IllegalArgumentException if necessary.
+		*
+		* @throws IllegalArgumentException
+		*/
+		private void validate() throws IllegalArgumentException {
+		for (int i=0; i<20*60*60; i++) {
+		    System.out.print('.');
+		    try {
+		        Thread.currentThread().sleep(1000);
+		    } catch (InterruptedException e) {
+		        break;
+		    }
+		}
+
+As I don’t understand the reason of above snippet ,  but built was successful after removal of this block from the code. 
+
+I believe the reason for build failure is above code which runs for 72000 times and goes way above from default timeout value of 600s, default value is also mentioned here: https://circleci.com/docs/configuration/
+
+Please revert if you have any other issue reading the project or suggestion for the above solution.
+
+Regards
+Yaswani
+
