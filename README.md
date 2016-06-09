@@ -1,4 +1,4 @@
-# yaswani Assignment
+# Yaswani Assignment
 
 Assignment 1:
 [Email-response](https://github.com/spirulina96/yaswani/blob/master/PRODSUP-001-email.txt) | 
