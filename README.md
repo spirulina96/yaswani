@@ -15,4 +15,5 @@ Assignment 3 :
 
 Video : [Webm](https://github.com/spirulina96/yaswani/blob/master/yaswani-crossover.webm)
 
+Overall Task : [Email with Steps](yaswani/README.txt)
 
